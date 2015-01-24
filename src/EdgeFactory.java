@@ -3,6 +3,7 @@ import java.util.Random;
 import org.apache.commons.collections15.Factory;
 
 public class EdgeFactory implements Factory<GeneratedEdge> {
+	private long edgeCount;
 	private double lowWeightLim;
 	private double uppWeightLim;
 	private Random random = new Random();
@@ -14,6 +15,6 @@ public class EdgeFactory implements Factory<GeneratedEdge> {
 	
 	public GeneratedEdge create() {
 		double weight = (uppWeightLim - lowWeightLim) * random.nextDouble() + lowWeightLim;
-		return new GeneratedEdge(weight);
+		return new GeneratedEdge(edgeCount++ ,weight);
 	}
 }

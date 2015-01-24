@@ -1,7 +1,9 @@
 public class GeneratedEdge {
+	private long id;
 	private double weight;
 	
-	public GeneratedEdge(double weight) {
+	public GeneratedEdge(long id, double weight) {
+		this.id = id;
 		this.weight = weight;
 	}
 	
@@ -14,6 +16,6 @@ public class GeneratedEdge {
     }
 	
 	public String toString() {
-		return String.format("%.2f", weight);
+		return "[ " + id + " ] " + String.format("%.2f", weight);
 	}
 }
